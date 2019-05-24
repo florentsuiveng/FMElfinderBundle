@@ -1,5 +1,5 @@
 {
-    "name": "helios-ag/fm-elfinder-bundle",
+    "name": "florentsuiveng/fm-elfinder-bundle",
     "description": "ElFinder bundle, adds ElFinder file manager to your Symfony project",
     "keywords": ["elfinder", "file manager", "wysiwyg"],
     "type": "symfony-bundle",
