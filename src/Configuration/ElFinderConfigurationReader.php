@@ -83,11 +83,18 @@ class ElFinderConfigurationReader implements ElFinderConfigurationProviderInterf
         $options['plugin']      = $parameters['connector']['plugins'];
         $options['roots']       = array();
 
-        foreach ($parameters['connector']['roots'] as $parameter) {
+        foreach ($parameters['connector']['roots'] as $key => $parameter) {
             $path              = $parameter['path'];
-            $homeFolder        = $request->attributes->get('homeFolder');
-            $homeFolder = str_replace("_", "/", $homeFolder);
-            $homeFolder = urldecode($homeFolder);
+
+            if($key == 'uploads')
+            {
+                $homeFolder = $request->attributes->get('homeFolder');
+                $homeFolder = str_replace("_", "/", $homeFolder);
+                $homeFolder = urldecode($homeFolder);
+            }
+            else{
+                $homeFolder = "";
+            }
             $pathAndHomeFolder = $homeFolder ? sprintf('%s/%s', $path, $homeFolder) : $path;
 
             if ($parameter['flysystem']['enabled']) {
