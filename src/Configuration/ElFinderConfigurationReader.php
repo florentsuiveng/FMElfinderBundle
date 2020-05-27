@@ -149,6 +149,7 @@ class ElFinderConfigurationReader implements ElFinderConfigurationProviderInterf
                 'archiveMimes'      => $parameter['archive_mimes'],
                 'archivers'         => $parameter['archivers'],
                 'fileMode'          => $parameter['fileMode'],
+                'i18nFolderName'          => $parameter['i18n_folder_name'],
             );
 
             if ($parameter['volume_id'] > 0) {
